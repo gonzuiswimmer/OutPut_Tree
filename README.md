@@ -62,13 +62,13 @@
 
 ## データベース設計
 ***
-[データベース設計(ER図)]([![Image from Gyazo](https://i.gyazo.com/d5935ffe2d660a6b87768e03dd77090a.png)](https://gyazo.com/d5935ffe2d660a6b87768e03dd77090a))
+[データベース設計(ER図)][![Image from Gyazo](https://i.gyazo.com/19e7d5c7beddbdc2113006c8296c635a.png)](https://gyazo.com/19e7d5c7beddbdc2113006c8296c635a)
 <br/>
 <br/>
 
 ## 画面遷移図
 ***
-[画面遷移図]([![Image from Gyazo](https://i.gyazo.com/e61a65a808dfb3e20054e02cbcadc59e.png)](https://gyazo.com/e61a65a808dfb3e20054e02cbcadc59e))
+[画面遷移図][![Image from Gyazo](https://i.gyazo.com/e61a65a808dfb3e20054e02cbcadc59e.png)](https://gyazo.com/e61a65a808dfb3e20054e02cbcadc59e)
 <br/>
 <br/>
 
