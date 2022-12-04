@@ -1,0 +1,70 @@
+<%= render "shared/header" %>
+<main>
+  <div class="wrapper">
+    <div class="user_profile">
+      <div class="page_title">
+        <h2>登録内容の編集</h2>
+      </div>
+      
+      <div class="registration_details">
+        <%= form_with model:@user, local: true do |f| %>
+        
+        <%= render 'shared/error_messages', model: f.object %>
+        
+        <div class="img-upload">
+          <div class="weight-bold-text">
+            プロフィール画像
+            <span class="indispensable">任意</span>
+          </div>
+          <div class="click-upload">
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :image, id:"item-image" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :nickname, "ユーザー名" %>
+          <%= f.text_area :nickname, id:"nickname" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "メールアドレス" %>
+          <%= f.text_area :email, id:"email" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :SNS1, "登録したいSNSのURLを記入してください" %>
+          <%= f.text_area :SNS1, id:"SNS1" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :SNS2, "登録したいSNSのURLを記入してください" %>
+          <%= f.text_area :SNS2, id:"SNS2" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :SNS3, "登録したいSNSのURLを記入してください" %>
+          <%= f.text_area :SNS3, id:"SNS3" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, "新しいパスワード" %><i> (変更したい場合)</i>
+          <%= f.text_area :password, id:"password" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "新しいパスワード(確認用)" %>
+          <%= f.text_area :password_confirmation, id:"password_onfirmation" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :current_password, "現在のパスワード変更" %><i>(変更にはパスワードが必要です)</i><br />
+          <%= f.text_area :current_password, id:"password_onfirmation" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "パスワード変更(確認用)" %>
+          <%= f.text_area :password_confirmation, id:"password_onfirmation" %>
+        </div>
+        <%= f.submit "変更を確定する", class: "btn" %>
+        <%= link_to "マイページへ", root_path, class: "edit_profile_btn" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</main>
+  
+<%= render "shared/footer.html.erb" %>
