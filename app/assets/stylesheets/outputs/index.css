@@ -81,12 +81,16 @@ inline-blockを設定している
 }
 #navi ul {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: end;
 }
 #header nav ul li {
   padding: 10px 60px 10px 0;
   font-size: 0.875rem;
+}
+#header .login_name {
+  font-weight: bold;
+  margin-right: 50px;
 }
 
 /*---------pickup---------*/
