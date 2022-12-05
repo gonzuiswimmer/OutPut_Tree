@@ -1,0 +1,40 @@
+#header {
+  color: white;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+}
+#header .site-title {
+  padding: 20px 16px;
+  line-height: 1px;
+}
+/*
+「display: inline-block;」でリンクを親要素の範囲に広げる
+※blockを指定すると横幅いっぱいまで広がってしまうため、
+inline-blockを設定している
+*/
+#header .site-title a {
+  display: inline-block;
+}
+#navi {
+  background-color: #000;
+}
+#navi a {
+  color: white;
+  border: solid white 2px;
+  padding: 7px 12px;
+}
+#navi ul {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+#header nav ul li {
+  padding: 10px 60px 10px 0;
+  font-size: 0.875rem;
+}
+#header .login_name {
+  font-weight: bold;
+  margin-right: 50px;
+}

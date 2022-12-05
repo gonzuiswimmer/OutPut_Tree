@@ -1,0 +1,62 @@
+<%= render "shared/header" %>
+<main>
+  <div class="wrapper">
+    <div class="user_profile">
+      <div class="page_title">
+        <h2>登録内容の編集</h2>
+      </div>
+      
+      <div class="registration_details">
+        <%= form_with model:@user, local: true do |f| %>
+        
+        <%= render 'shared/error_messages', model: f.object %>
+        
+        <div class="img-upload">
+          <div class="weight-bold-text">
+            プロフィール画像
+            <span class="indispensable">任意</span>
+          </div>
+          <div class="click-upload">
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :image, id:"item-image" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :nickname, "ユーザー名" %>
+          <%= f.text_field :nickname, id:"nickname" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "メールアドレス" %>
+          <%= f.text_field :email, id:"email" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :SNS1, "登録したいSNSのURLを記入してください(任意・3つまで)" %>
+          <%= f.text_field :SNS1, id:"SNS1" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :SNS2, "登録したいSNSのURLを記入してください(任意・3つまで)" %>
+          <%= f.text_field :SNS2, id:"SNS2" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :SNS3, "登録したいSNSのURLを記入してください(任意・3つまで)" %>
+          <%= f.text_field :SNS3, id:"SNS3" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, "新しいパスワード" %><i> (変更したい場合は記入)</i>
+          <%= f.text_field :password, id:"password" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "新しいパスワード(確認用)" %>
+          <%= f.text_field :password_confirmation, id:"password_onfirmation" %>
+        </div>
+        <%= f.submit "変更を確定する", class: "edit_profile_btn" %>
+        <%= link_to "トップページへ", root_path, class: "back_to_toppage_btn" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</main>
+  
+<%= render "shared/footer.html.erb" %>

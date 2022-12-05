@@ -1,0 +1,13 @@
+.page_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit_profile_btn {
+  border: 1px solid #d65f4c;
+  color: white;
+  background-color: #d65f4c;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 30px;
+}

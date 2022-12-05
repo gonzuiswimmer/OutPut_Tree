@@ -1,0 +1,111 @@
+<%= render "shared/header" %>
+
+<main>
+  <div class="top-page-title">
+    <h2><%= current_user.nickname %>さんの投稿一覧</h2>
+  </div>
+  <div id="container" class="wrapper">
+    <div class="main-bar">
+      <% @outputs.each do |output| %>
+        <article>
+          <h2 class="article-title"><%= output.title %></h2>
+          <ul class="meta">
+            <li><%= output.post_date %></li>
+            <li><%= output.genre.name %></li>
+          </ul>
+          <a href="#"><img src="img/main1.jpg" alt="テキストテキスト"></a>
+          <div class="detail-text">
+            <textarea name="" id="" cols="100" rows="10">
+              <%= output.detail %>
+            </textarea>
+          </div>
+          <% if user_signed_in? && current_user.id == output.user.id %>
+            <div class="read-more">
+              <%= link_to "投稿を編集する", edit_output_path(output.id), method: :get, class: "edit_profile_btn"%>
+              <%= link_to "投稿を削除する", output_path(output.id), method: :delete, class: "delete_btn", data: {confirm: "削除しますか？"} %>
+            </div>
+            <% else %>
+              <%= link_to "READ MORE", "#" %>
+          <% end %>
+        </article>
+      <% end %>
+    </div>
+
+    <aside id="sidebar">
+      <section class="author">
+        <%= image_tag("profile_test.jpg") %>
+        <h3 class="right-h3"><%= current_user.nickname %></h3>
+        <p class="profile">プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      </section>
+
+      <section class="ranking">
+        <h3 class="right-h3">Ranking</h3>
+        <article>
+          <a href="#">
+            <img src="img/ranking1.jpg" alt="">
+            <h4 class="article-title">タイトルテキストテキストテキストテキストテキストテキスト</h4>
+          </a>
+        </article>
+
+        <article>
+          <a href="#">
+            <img src="img/ranking1.jpg" alt="">
+            <h4 class="article-title">タイトルテキストテキストテキストテキストテキストテキスト</h4>
+          </a>
+        </article>
+
+        <article>
+          <a href="#">
+            <img src="img/ranking1.jpg" alt="">
+            <h4 class="article-title">タイトルテキストテキストテキストテキストテキストテキスト</h4>
+          </a>
+        </article>
+      </section>
+
+      <section class="archive">
+        <h3 class="right-h3">Archive</h3>
+        <ul>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+          <li><a href="#"> XXXX年XX月</a>（XX）</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <div id="pickup" class="wrapper">
+  <article>
+    <img src="img/pickup1.jpg" alt="テキストテキスト">
+    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
+    <div class="read-more">
+      <a href="#">READ MORE</a>
+    </div>
+  </article>
+
+  <article>
+    <img src="img/pickup2.jpg" alt="テキストテキスト">
+    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
+    <div class="read-more">
+      <a href="#">READ MORE</a>
+    </div>
+  </article>
+
+  <article>
+    <img src="img/pickup3.jpg" alt="テキストテキスト">
+    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
+    <div class="read-more">
+      <a href="#">READ MORE</a>
+    </div>
+  </article>
+</div>
+</main>
+
+<%= render "shared/footer.html.erb" %>
+

@@ -1,0 +1,18 @@
+<header id="header">
+  <h1 class="site-title wrapper"><a href="#"><%= image_tag("tree_icon.png", size: '50x50') %>OutPut_Tree</a></h1>
+  <nav id="navi">
+    <% if user_signed_in?  %>
+      <ul class="user__info">
+        <li class="login_name"><%= current_user.nickname %>　さんがログイン中です</li>
+        <li><%= link_to "マイページ", "/users/#{current_user.id}"  %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "投稿する", new_output_path, class: "post" %></li>
+      </ul>  
+    <% else %>
+      <ul class="user__info">
+        <li><%= link_to "ログイン", new_user_session_path, class: "post" %></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
+      </ul>
+    <% end %>
+  </nav>
+</header>

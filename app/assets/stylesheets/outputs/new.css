@@ -1,0 +1,30 @@
+main {
+  width: 100%;
+}
+.form_wrapper {
+  text-align: center;
+}
+.form_flex {
+  width: 800px;
+  margin: 0 auto;
+}
+.form_item {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.form_item label {
+  padding: 3px;
+  border-bottom: solid 2px black;
+}
+.form_item input {
+  margin-top: 15px;
+  width: 100%;
+}
+.form_item textarea {
+  margin-top: 15px;
+  width: 100%;
+}
+.form_item select {
+  margin-top: 15px;
+  width: 100%;
+}
