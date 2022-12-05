@@ -3,6 +3,9 @@ class OutputsController < ApplicationController
 
   def index
     @outputs = Output.all
+    if user_signed_in?
+      @current_user_outputs = Output.where(user_id: current_user.id)
+    end
   end
 
   def new
