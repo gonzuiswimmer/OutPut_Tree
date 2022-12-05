@@ -9,6 +9,7 @@ class User < ApplicationRecord
     validates :nickname, presence: true
 
   has_many :outputs
+  has_many :items
 
   
   def update_without_current_password(params, *options)
