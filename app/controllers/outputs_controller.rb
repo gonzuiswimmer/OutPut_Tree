@@ -1,5 +1,8 @@
 class OutputsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
+    @outputs = Output.all
   end
 
   def new
@@ -20,4 +23,5 @@ class OutputsController < ApplicationController
   def output_params
     params.require(:output).permit(:title, :detail, :post_date, :genre_id).merge(user_id: current_user.id)
   end
+
 end

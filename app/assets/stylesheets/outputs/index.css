@@ -86,7 +86,7 @@ li {
   justify-content: space-between;
 }
 #container .main-bar {
-  width: 65%;
+  width: 70%;
 }
 #container .main-bar article {
   margin-bottom: 80px;
@@ -99,19 +99,25 @@ li {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
+  padding-left: 0;
+}
+#container .main-bar article ul li {
+  font-weight: bold;
+  color: #0cf;
 }
 #container .main-bar article li {
   font-size: 0.875rem;
   margin-right: 20px;
 }
-#container .main-bar article .main-text {
-  padding: 10px 40px 30px 40px;
+#container .main-bar article .detail-text textarea{
+  font-size: 1rem;
+  width: 100%;
 }
 
 
 /*-----aside-----*/
 #sidebar {
-  width: 33%;
+  width: 30%;
   padding: 20px;
 }
 #sidebar .right-h3 {

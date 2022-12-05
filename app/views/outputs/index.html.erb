@@ -6,44 +6,24 @@
   </div>
   <div id="container" class="wrapper">
     <div class="main-bar">
-      <article>
-        <h2 class="article-title">タイトルテキストテキストテキストテキストテキスト</h2>
-        <ul class="meta">
-          <li><a href="#">2020/01/01</a></li>
-          <li><a href="#">カテゴリ1</a></li>
-        </ul>
-        <a href="#"><img src="img/main1.jpg" alt="テキストテキスト"></a>
-        <p class="main-text">本文テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-        <div class="read-more">
-          <a href="#">READ MORE</a>
-        </div>
-      </article>
-
-      <article>
-        <h2 class="article-title">タイトルテキストテキストテキストテキストテキスト</h2>
-        <ul class="meta">
-          <li><a href="#">2020/01/01</a></li>
-          <li><a href="#">カテゴリ1</a></li>
-        </ul>
-        <a href="#"><img src="img/main2.jpg" alt="テキストテキスト"></a>
-        <p class="main-text">本文テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-        <div class="read-more">
-          <a href="#">READ MORE</a>
-        </div>
-      </article>
-
-      <article>
-        <h2 class="article-title">タイトルテキストテキストテキストテキストテキスト</h2>
-        <ul class="meta">
-          <li><a href="#">2020/01/01</a></li>
-          <li><a href="#">カテゴリ1</a></li>
-        </ul>
-        <a href="#"><img src="img/main3.jpg" alt="テキストテキスト"></a>
-        <p class="main-text">本文テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-        <div class="read-more">
-          <a href="#">READ MORE</a>
-        </div>
-      </article>
+      <% @outputs.each do |output| %>
+        <article>
+          <h2 class="article-title"><%= output.title %></h2>
+          <ul class="meta">
+            <li><%= output.post_date %></li>
+            <li><%= output.genre.name %></li>
+          </ul>
+          <a href="#"><img src="img/main1.jpg" alt="テキストテキスト"></a>
+          <div class="detail-text">
+            <textarea name="" id="" cols="100" rows="10">
+              <%= output.detail %>
+            </textarea>
+          </div>
+          <div class="read-more">
+            <a href="#">READ MORE</a>
+          </div>
+        </article>
+      <% end %>
     </div>
 
     <aside id="sidebar">
