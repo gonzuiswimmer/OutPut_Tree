@@ -32,32 +32,10 @@ li {
   margin: 0 auto;
 }
 .read-more {
-  font-size: 0.875rem;
-  color: #333;
+  margin-top: 20px;
   text-align: center;
 }
-.read-more a {
-  padding-bottom: 1px;
-  position: relative;
-}
-/*疑似要素を使って下線を設定。
-　aタグにposition:relative;、aタグの疑似要素にposition:relative;　left0、bottom0、widht100%で下線を作成。
-　「content: '';」は:beforeまたは:afterの疑似要素にコンテンツを挿入する
-　→CSSによって作り出された、架空の要素（＝疑似要素）となる*/
-.read-more a::after {
-  content: '';
-  position: absolute;
-  height: 1px;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  background: #333;
-  transition: all 200ms ease;
-}
-.read-more a:hover::after {
-  opacity: 0;
-  transform: translateY(3px);
-}
+
 
 
 

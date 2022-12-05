@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+<main>
+
+<div class="form_wrapper">
+  <h3>投稿内容の修正</h3>
+
+    <%= form_with model:@output, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+    
+      <div class="form_flex">
+        <div class="form_item">
+          <%= f.label :title, "見出し" %>
+          <%= f.text_field :title, placeholder: "タイトル" %>
+        </div>
+        <div class="form_item">
+          <%= f.label :detail, "アウトプット内容" %>
+          <%= f.text_area :detail, placeholder: "アウトプット内容の詳細・URlリンクなど", rows: "10" %>
+        </div>
+        <div class="form_item">
+          <%= f.label :post_date, "投稿日" %>
+          <%= f.date_field :post_date %>
+        </div>
+        <div class="form_item">
+          <%= f.label :genre_id, "ジャンル" %>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"output-genre"}) %>
+        </div>
+        <div class="form_item">
+          <%= f.submit "修正する", class: "edit_profile_btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+  
+<%= render "shared/footer.html.erb" %>

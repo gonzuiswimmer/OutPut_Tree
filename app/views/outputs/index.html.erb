@@ -19,9 +19,13 @@
               <%= output.detail %>
             </textarea>
           </div>
-          <div class="read-more">
-            <a href="#">READ MORE</a>
-          </div>
+          <% if user_signed_in? && current_user.id == output.user.id %>
+            <div class="read-more">
+              <%= link_to "投稿を編集する", edit_output_path(output.id), method: :get, class: "edit_profile_btn"%>
+            </div>
+            <% else %>
+              <%= link_to "READ MORE", "#" %>
+          <% end %>
         </article>
       <% end %>
     </div>
