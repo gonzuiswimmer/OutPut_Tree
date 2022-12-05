@@ -24,3 +24,7 @@ main {
   margin-top: 15px;
   width: 100%;
 }
+.form_item select {
+  margin-top: 15px;
+  width: 100%;
+}

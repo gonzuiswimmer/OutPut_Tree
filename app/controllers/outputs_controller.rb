@@ -18,6 +18,6 @@ class OutputsController < ApplicationController
 
   private
   def output_params
-    params.require(:output).permit(:title, :detail, :post_date).merge(user_id: current_user.id)
+    params.require(:output).permit(:title, :detail, :post_date, :genre_id).merge(user_id: current_user.id)
   end
 end
