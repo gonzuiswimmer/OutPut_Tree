@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
   root to: "outputs#index"
-  resources :outputs
   resources :users, only: [:show, :edit, :update, :destroy]
+  resources :outputs do
+    resources :items, only: [:new, :create, :show, :edit, :update, :destroy]
+  end
 end

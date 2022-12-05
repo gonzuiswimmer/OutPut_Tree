@@ -1,0 +1,30 @@
+<%= render "shared/header" %>
+
+<main>
+<div class="form_wrapper">
+  <h3>出品ページ</h3>
+  <%= form_with model: [@output, @item], url: output_items_path(@output.id), local: true do |form| %>
+    <%= render 'shared/error_messages', model: form.object %>
+    <div class="form_flex">
+      <div class="form_item">
+        <%= form.label :item_name, "商品名" %>
+        <%= form.text_field :item_name, placeholder: "商品名" %>
+      </div>
+      <div class="form_item">
+        <%= form.label :item_detail, "商品内容" %>
+        <%= form.text_area :item_detail, placeholder: "商品内容", rows: "10" %>
+      </div>
+      <div class="form_item">
+        <%= form.label :price, "出品金額" %>
+        <%= form.text_field :price, placeholder: "例）1200"%>
+      </div>
+      <div class="form_item">
+        <%= form.submit "出品する", class: "exhibit_btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</main>
+
+<%= render "shared/footer.html.erb" %>
+

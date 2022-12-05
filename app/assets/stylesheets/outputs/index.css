@@ -44,6 +44,14 @@ li {
   padding: 10px 30px;
 }
 
+.exhibit_btn {
+  border: 1px solid #FFCC66;
+  color: white;
+  background-color: #FFCC66;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 30px;
+}
 
 
 /*---------pickup---------*/
