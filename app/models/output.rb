@@ -7,4 +7,5 @@ class Output < ApplicationRecord
   validates :genre_id, numericality: { other_than: 0, message: "can't be blank"}
 
   belongs_to :genre
+  belongs_to :user
 end

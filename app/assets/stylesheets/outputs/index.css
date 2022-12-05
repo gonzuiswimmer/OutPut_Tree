@@ -20,6 +20,11 @@ li {
   list-style: none;
 }
 
+.top-page-title {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+}
+
 /*コンテンツ幅を統一するための共通クラス*/
 .wrapper {
   max-width: 1200px;
@@ -80,26 +85,26 @@ li {
   margin-bottom: 60px;
   justify-content: space-between;
 }
-main {
+#container .main-bar {
   width: 65%;
 }
-main article {
+#container .main-bar article {
   margin-bottom: 80px;
 }
-main .article-title {
+#container .main-bar .article-title {
   font-size: 1.5rem;
   margin: 10px 0 15px 0;
 }
-main article ul {
+#container .main-bar article ul {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-main article li {
+#container .main-bar article li {
   font-size: 0.875rem;
   margin-right: 20px;
 }
-main article .main-text {
+#container .main-bar article .main-text {
   padding: 10px 40px 30px 40px;
 }
 

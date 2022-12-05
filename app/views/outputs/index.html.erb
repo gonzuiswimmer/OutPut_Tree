@@ -1,34 +1,11 @@
 <%= render "shared/header" %>
 
 <main>
-<div id="pickup" class="wrapper">
-  <article>
-    <img src="img/pickup1.jpg" alt="テキストテキスト">
-    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
-    <div class="read-more">
-      <a href="#">READ MORE</a>
-    </div>
-  </article>
-
-  <article>
-    <img src="img/pickup2.jpg" alt="テキストテキスト">
-    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
-    <div class="read-more">
-      <a href="#">READ MORE</a>
-    </div>
-  </article>
-
-  <article>
-    <img src="img/pickup3.jpg" alt="テキストテキスト">
-    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
-    <div class="read-more">
-      <a href="#">READ MORE</a>
-    </div>
-  </article>
-</div>
-
+  <div class="top-page-title">
+    <h2><%= current_user.nickname %>さんの投稿一覧</h2>
+  </div>
   <div id="container" class="wrapper">
-    <main>
+    <div class="main-bar">
       <article>
         <h2 class="article-title">タイトルテキストテキストテキストテキストテキスト</h2>
         <ul class="meta">
@@ -67,12 +44,12 @@
           <a href="#">READ MORE</a>
         </div>
       </article>
-    </main>
+    </div>
 
     <aside id="sidebar">
       <section class="author">
         <%= image_tag("profile_test.jpg") %>
-        <h3 class="right-h3">Name Name</h3>
+        <h3 class="right-h3"><%= current_user.nickname %></h3>
         <p class="profile">プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
       </section>
 
@@ -113,15 +90,36 @@
           <li><a href="#"> XXXX年XX月</a>（XX）</li>
           <li><a href="#"> XXXX年XX月</a>（XX）</li>
           <li><a href="#"> XXXX年XX月</a>（XX）</li>
-          <li><a href="#"> XXXX年XX月</a>（XX）</li>
-          <li><a href="#"> XXXX年XX月</a>（XX）</li>
-          <li><a href="#"> XXXX年XX月</a>（XX）</li>
-          <li><a href="#"> XXXX年XX月</a>（XX）</li>
-          <li><a href="#"> XXXX年XX月</a>（XX）</li>
         </ul>
       </section>
     </aside>
   </div>
+
+  <div id="pickup" class="wrapper">
+  <article>
+    <img src="img/pickup1.jpg" alt="テキストテキスト">
+    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
+    <div class="read-more">
+      <a href="#">READ MORE</a>
+    </div>
+  </article>
+
+  <article>
+    <img src="img/pickup2.jpg" alt="テキストテキスト">
+    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
+    <div class="read-more">
+      <a href="#">READ MORE</a>
+    </div>
+  </article>
+
+  <article>
+    <img src="img/pickup3.jpg" alt="テキストテキスト">
+    <h2 class="sample-text">タイトルテキストタイトルテキストタイトルテキストタイトルテキスト</h2>
+    <div class="read-more">
+      <a href="#">READ MORE</a>
+    </div>
+  </article>
+</div>
 </main>
 
 <%= render "shared/footer.html.erb" %>
