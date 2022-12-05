@@ -16,8 +16,12 @@
         <%= form.text_area :detail, placeholder: "アウトプット内容の詳細・URlリンクなど", rows: "10" %>
       </div>
       <div class="form_item">
-        <%= form.label :date, "投稿日" %>
-        <%= form.date_field :date %>
+        <%= form.label :post_date, "投稿日" %>
+        <%= form.date_field :post_date %>
+      </div>
+      <div class="form_item">
+        <%= form.label :genre_id, "ジャンル" %>
+        <%= form.date_field :genre_id %>
       </div>
       <div class="form_item">
         <%= form.submit "投稿する", class: "edit_profile_btn" %>
