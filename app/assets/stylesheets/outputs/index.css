@@ -35,7 +35,14 @@ li {
   margin-top: 20px;
   text-align: center;
 }
-
+.delete_btn {
+  border: 1px solid #CCCCCC;
+  color: white;
+  background-color: #CCCCCC;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 30px;
+}
 
 
 

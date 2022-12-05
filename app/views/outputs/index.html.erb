@@ -22,6 +22,7 @@
           <% if user_signed_in? && current_user.id == output.user.id %>
             <div class="read-more">
               <%= link_to "投稿を編集する", edit_output_path(output.id), method: :get, class: "edit_profile_btn"%>
+              <%= link_to "投稿を削除する", output_path(output.id), method: :delete, class: "delete_btn"%>
             </div>
             <% else %>
               <%= link_to "READ MORE", "#" %>
