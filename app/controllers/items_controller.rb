@@ -7,9 +7,11 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:output_id])
   end
 
   def edit
+    @item = Item.find(params[:output_id])
   end
 
   def create
