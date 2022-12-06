@@ -18,11 +18,17 @@
         <%= form.label :price, "出品金額" %>
         <%= form.text_field :price, placeholder: "例）1200"%>
       </div>
+      <%# <div class="form_item">
+        <%= form.label :item_image, "画像(任意)" %>
+        <%# <%= form.file_field :item_image, id:"item-image" %>
+      <%# </div> %>
       <div class="form_item">
-         <%= link_to "出品情報を編集する", output_item_path(params[:id]), class: "edit_profile_btn"%>
-         <%= link_to "出品情報を削除する", output_item_path(params[:id]), method: :delete, class: "delete_btn", data: {confirm: "出品情報を削除しますか？"} %>
+         <%= form.submit "出品情報を更新する", class: "edit_profile_btn" %>
       </div>
-    </div>
+      <%# <div class="form_item">
+         <%= link_to "出品情報を更新する", output_item_path(@item.id), method: :patch, class: "edit_profile_btn"%>
+         <%# <%= link_to "出品情報を削除する", output_item_path(@item.id), method: :delete, class: "delete_btn", data: {confirm: "出品情報を削除しますか？"} %> %>
+      <%# </div> %> %>
   <% end %>
 </div>
 </main>

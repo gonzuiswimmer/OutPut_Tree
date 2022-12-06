@@ -24,6 +24,10 @@
           <%= f.label :genre_id, "ジャンル" %>
           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"output-genre"}) %>
         </div>
+         <div class="form_item">
+          <%= f.label :output_image, "画像(任意)" %>
+          <%= f.file_field :output_image, id:"output-image" %>
+        </div>
         <div class="form_item">
           <%= f.submit "修正する", class: "edit_profile_btn" %>
         </div>
@@ -31,10 +35,10 @@
     <% end %>
 
     <div class="form_item">
-    <% unless @item.any? %>
+    <% unless @item.present? %>
       <%= link_to "成果物を出品する", new_output_item_path(params[:id]) , class: "exhibit_btn" %>
     <% else %>
-      <%= link_to "出品済みの成果物を確認する", output_item_path(params[:id]) , class: "exhibit_btn" %>
+      <%= link_to "出品済みの成果物を確認する", output_item_path(@item.ids) , class: "exhibit_btn" %>
     <% end %>
     </div>
   </div>

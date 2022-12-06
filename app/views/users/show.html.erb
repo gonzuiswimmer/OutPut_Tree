@@ -11,6 +11,7 @@
           <li>nickname:   <%= @user.nickname %></li>
           <li>mail:    <%= @user.email %></li>
           <li>password:   <%= "*********" %></li>
+          <li><%= image_tag(current_user.user_image, class: "user_profile_image") %></li>
         </ul>
       </div>
     </div>

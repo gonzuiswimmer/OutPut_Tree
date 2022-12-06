@@ -20,7 +20,16 @@
         <%= form.text_field :price, placeholder: "例）1200", readonly: true%>
       </div>
       <div class="form_item">
-         <%= link_to "出品情報を編集する", edit_output_item_path(params[:id]), class: "edit_profile_btn"%>
+      <%# <%= form.label :item_image, "参考画像" %> %>
+      <%# <div class="item_image"> %>
+        <%# <% if @item.item_image.present? %>
+          <%# <%= image_tag(@item.item_image) %>
+        <%# <% else %>
+          <%# 画像はありません %>
+        <%# <% end %>
+      </div>
+      <div class="form_item">
+         <%= link_to "出品情報を編集する", edit_output_item_path(@item.id), class: "edit_profile_btn"%>
       </div>
     </div>
   <% end %>

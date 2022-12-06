@@ -11,7 +11,11 @@
           <li><%= output.post_date %></li>
           <li><%= output.genre.name %></li>
         </ul>
-        <a href="#"><img src="img/main1.jpg" alt="テキストテキスト"></a>
+        <% if output.output_image.present? %>
+          <%= image_tag(output.output_image) %>
+        <% else %>
+          画像はありません
+        <% end %>
         <div class="detail-text">
           <textarea name="" id="" cols="100" rows="10">
             <%= output.detail %>

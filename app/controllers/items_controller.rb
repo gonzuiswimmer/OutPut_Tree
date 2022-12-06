@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @output = Output.find(params[:id])
     @item = Item.find(params[:output_id])
   end
 
