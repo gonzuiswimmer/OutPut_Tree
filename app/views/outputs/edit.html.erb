@@ -31,7 +31,11 @@
     <% end %>
 
     <div class="form_item">
+    <% unless @item.any? %>
       <%= link_to "成果物を出品する", new_output_item_path(params[:id]) , class: "exhibit_btn" %>
+    <% else %>
+      <%= link_to "出品済みの成果物を確認する", output_item_path(params[:id]) , class: "exhibit_btn" %>
+    <% end %>
     </div>
   </div>
 </main>
