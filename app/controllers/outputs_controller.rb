@@ -3,6 +3,9 @@ class OutputsController < ApplicationController
 
   def index
     @outputs = Output.all
+    if user_signed_in?
+      @current_user_outputs = Output.where(user_id: current_user.id)
+    end
   end
 
   def new
@@ -21,6 +24,7 @@ class OutputsController < ApplicationController
 
   def edit
     @output = Output.find(params[:id])
+    @item = Item.where(output_id: @output.id)
   end
 
   def update

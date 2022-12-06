@@ -1,0 +1,26 @@
+<div class="top-page-title">
+  <h2>みなさんの投稿一覧</h2>
+</div>
+
+<div id="container" class="wrapper">
+  <div class="main-bar">
+    <% @outputs.shuffle.first(5).each do |output| %>
+      <article>
+        <h2 class="article-title"><%= output.title %></h2>
+        <ul class="meta">
+          <li><%= output.post_date %></li>
+          <li><%= output.genre.name %></li>
+        </ul>
+        <a href="#"><img src="img/main1.jpg" alt="テキストテキスト"></a>
+        <div class="detail-text">
+          <textarea name="" id="" cols="100" rows="10">
+            <%= output.detail %>
+          </textarea>
+        </div>
+        <div class="read-more">
+          <%= link_to "READ MORE", "#" %>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</div>
