@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :SNS1
       t.string :SNS2
       t.string :SNS3
+      t.text   :profile
       t.integer :layouts_id        
 
 

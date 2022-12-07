@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_05_064848) do
+ActiveRecord::Schema.define(version: 2022_12_07_064635) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 2022_12_05_064848) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "outputs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "detail", null: false
@@ -62,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_12_05_064848) do
     t.string "SNS1"
     t.string "SNS2"
     t.string "SNS3"
+    t.text "profile"
     t.integer "layouts_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
