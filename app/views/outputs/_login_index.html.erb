@@ -17,9 +17,7 @@
           画像はありません
         <% end %>
         <div class="detail-text">
-          <textarea name="" id="" cols="100" rows="10">
-            <%= output.detail %>
-          </textarea>
+          <textarea name="" id="" cols="100" rows="10"><%= output.detail %></textarea>
         </div>
         <div class="read-more">
         <% if current_user.id == output.user.id %>
