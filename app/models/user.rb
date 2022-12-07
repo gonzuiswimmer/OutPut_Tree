@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   has_many :outputs
   has_many :items
+  has_many :orders
   has_one_attached :user_image
   
   def update_without_current_password(params, *options)
