@@ -6,7 +6,13 @@
     <%= image_tag("noimage_human.png") %>
   <% end %>
     <h3 class="right-h3"><%= current_user.nickname %></h3>
-    <p class="profile">プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="profile">
+      <% if current_user.profile.present? %>
+        <%= current_user.profile %>
+      <% else %>
+        プロフィール情報は入力されていません
+      <% end %>
+    </p>
   </section>
 
   <section class="ranking">

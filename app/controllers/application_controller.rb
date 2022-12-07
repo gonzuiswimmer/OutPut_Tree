@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :SNS1, :SNS2, :SNS3, :layouts_id, :user_image])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :SNS1, :SNS2, :SNS3, :layouts_id, :user_image])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :SNS1, :SNS2, :SNS3, :layouts_id, :profile, :user_image])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :SNS1, :SNS2, :SNS3, :layouts_id, :profile, :user_image])
   end
 end
