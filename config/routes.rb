@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :outputs do
     resources :items, only: [:new, :create, :show, :edit, :update, :destroy]
   end
+  resources :orders, only: [:index, :create]
 end
