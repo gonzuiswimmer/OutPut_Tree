@@ -13,6 +13,8 @@
           <li>password:   <%= "*********" %></li>
         <% if current_user.user_image.present? %>
           <li><%= image_tag(current_user.user_image, class: "user_profile_image") %></li>
+        <% else %>
+          <li><%= image_tag("noimage_human.png") %></li>
         <% end %>
         </ul>
       </div>

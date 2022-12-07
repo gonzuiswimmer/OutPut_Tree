@@ -2,6 +2,8 @@
   <section class="author">
   <% if current_user.user_image.present? %>
     <%= image_tag(current_user.user_image) %>
+  <% else %>
+    <%= image_tag("noimage_human.png") %>
   <% end %>
     <h3 class="right-h3"><%= current_user.nickname %></h3>
     <p class="profile">プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
