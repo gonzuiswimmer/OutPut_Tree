@@ -1,18 +1,19 @@
 <div class="top-page-title">
-  <h2><%= current_user.nickname %>さんの投稿一覧</h2>
+  <h2>みんなの投稿一覧</h2>
 </div>
 
 <div id="container" class="wrapper">
   <div class="main-bar">
-    <% @current_user_outputs.each do |output| %>
+    <% @outputs.shuffle.first(5).each do |output| %>
       <article>
         <h2 class="article-title"><%= output.title %></h2>
         <ul class="meta">
+          <li>投稿者：<%= output.user.nickname %>さん</li>
           <li><%= output.post_date %></li>
           <li><%= output.genre.name %></li>
         </ul>
-        <% if output.output_image.present?%>
-          <%= image_tag(output.output_image) %> 
+        <% if output.output_image.present? %>
+          <%= image_tag(output.output_image) %>
         <% else %>
           画像はありません
         <% end %>
@@ -20,16 +21,10 @@
           <textarea name="" id="" cols="100" rows="10"><%= output.detail %></textarea>
         </div>
         <div class="read-more">
-        <% if current_user.id == output.user.id %>
-          <%= link_to "投稿を編集する", edit_output_path(output.id), method: :get, class: "edit_profile_btn"%>
-          <%= link_to "投稿を削除する", output_path(output.id), method: :delete, class: "delete_btn", data: {confirm: "削除しますか？"} %>
-        <% else %>
-          <%= link_to "READ MORE", "#" %>
-        <% end %>
+          <%= link_to "READ MORE", output_path(output.id) ,class:"item-red-btn" %>
         </div>
       </article>
     <% end %>
   </div>
-
   <%= render "aside.html.erb" %>
 </div>

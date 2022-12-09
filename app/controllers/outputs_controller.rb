@@ -36,6 +36,11 @@ class OutputsController < ApplicationController
     end 
   end
 
+  def show
+    @output = Output.find(params[:id])
+    @item = Item.where(output_id: @output.id)
+  end
+
   def destroy
     @output = Output.find(params[:id])
     @output.destroy

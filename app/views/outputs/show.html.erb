@@ -1,0 +1,42 @@
+<%= render "shared/header" %>
+<main>
+
+<div class="form_wrapper">
+  <h3>投稿内容</h3>
+  <p class="not-edit">※このページでは編集はできません</p>
+    
+  <article>
+    <h2 class="article-title"><%= @output.title %></h2>
+    <ul class="meta">
+      <li>投稿者：<%= @output.user.nickname %>さん</li>
+      <li><%= @output.post_date %></li>
+      <li><%= @output.genre.name %></li>
+    </ul>
+    <% if @output.output_image.present? %>
+      <%= image_tag(@output.output_image) %>
+    <% else %>
+      画像はありません
+    <% end %>
+    <div class="detail-text">
+      <textarea readonly name="" id="" cols="100" rows="10"><%= @output.detail %></textarea>
+    </div>
+  </article>
+
+    <% if current_user.id == @output.user_id %>
+      <div class="form_item">
+        <%= link_to "投稿内容を編集する", edit_output_path(@output.id), class: "edit_profile_btn"%>
+        <% unless @item.present? %>
+          <%= link_to "成果物を出品する", new_output_item_path(params[:id]) , class: "exhibit_btn" %>
+        <% else %>
+          <%= link_to "出品済みの成果物を確認する", output_item_path(@item.ids) , class: "exhibit_btn" %>
+        <% end %>
+      </div>
+    <% elsif user_signed_in? && @item.present? %>
+        <%= link_to "出品済みの成果物を確認する", output_item_path(@item.ids) , class: "exhibit_btn" %>
+    <% else %>
+      <%= link_to "戻る", root_path %>
+    <% end %>
+  </div>
+</main>
+  
+<%= render "shared/footer.html.erb" %>

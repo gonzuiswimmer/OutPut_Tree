@@ -25,6 +25,41 @@
       </div>
     </div>
   </div>
+    
+  <div class="top-page-title">
+    <h2><%= current_user.nickname %>さんの投稿一覧</h2>
+  </div>
+
+  <div id="container" class="wrapper">
+    <div class="main-bar">
+      <% @current_user_outputs.each do |output| %>
+        <article>
+          <h2 class="article-title"><%= output.title %></h2>
+          <ul class="meta">
+            <li><%= output.post_date %></li>
+            <li><%= output.genre.name %></li>
+          </ul>
+          <% if output.output_image.present?%>
+            <%= image_tag(output.output_image) %> 
+          <% else %>
+            画像はありません
+          <% end %>
+          <div class="detail-text">
+            <textarea name="" id="" cols="100" rows="10"><%= output.detail %></textarea>
+          </div>
+          <div class="read-more">
+          <% if current_user.id == output.user.id %>
+            <%= link_to "投稿を編集する", edit_output_path(output.id), method: :get, class: "edit_profile_btn"%>
+            <%= link_to "投稿を削除する", output_path(output.id), method: :delete, class: "delete_btn", data: {confirm: "削除しますか？"} %>
+          <% else %>
+            <%= link_to "READ MORE", "#" %>
+          <% end %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+
 </main>
   
 <%= render "shared/footer.html.erb" %>
