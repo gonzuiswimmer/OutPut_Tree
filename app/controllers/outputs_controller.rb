@@ -24,7 +24,7 @@ class OutputsController < ApplicationController
 
   def edit
     @output = Output.find(params[:id])
-    @item = Item.where(output_id: @output.id)
+    @item = Item.where(output_id: params[:id])
   end
 
   def update
