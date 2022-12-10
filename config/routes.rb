@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :outputs do
     resources :items, only: [:new, :create, :show, :edit, :update, :destroy] do
-      resources :orders, only: [:index, :create]
+      # resources :orders, only: [:index, :create]
     end
   end
 end
