@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_output
+  before_action :set_output, only: [:edit, :update]
   before_action :set_item, only: [:create]
 
   def new
@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:output_id])
+    @item = Item.find(params[:id])
   end
 
   def edit
@@ -25,27 +25,27 @@ class ItemsController < ApplicationController
 
 
   def update
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:output_id])
     if @item.update(item_params)
       redirect_to root_path
     else 
-      render 'edit'
+      render :edit
     end 
   end
 
   def destroy
-    @item = Item.find(params[:output_id])
+    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
   end
 
   private
   def set_output
-    @output = Output.find(params[:output_id])
+    @output = Output.find(params[:id])
   end
 
   def item_params
-    params.require(:item).permit(:item_name, :item_detail, :price).merge(user_id: current_user.id, output_id: @output.id)
+    params.require(:item).permit(:item_name, :item_detail, :price).merge(user_id: current_user.id, output_id: params[:output_id])
   end
 
   def set_item

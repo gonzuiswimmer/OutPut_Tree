@@ -1,5 +1,5 @@
 <div class="top-page-title">
-  <h2>みなさんの投稿一覧</h2>
+  <h2>みんなの投稿一覧</h2>
 </div>
 
 <div id="container" class="wrapper">
@@ -8,14 +8,17 @@
       <article>
         <h2 class="article-title"><%= output.title %></h2>
         <ul class="meta">
+          <li>投稿者：<%= output.user.nickname %>さん</li>
           <li><%= output.post_date %></li>
           <li><%= output.genre.name %></li>
         </ul>
-        <a href="#"><img src="img/main1.jpg" alt="テキストテキスト"></a>
+        <% if output.output_image.present? %>
+          <%= image_tag(output.output_image) %>
+        <% else %>
+          画像はありません
+        <% end %>
         <div class="detail-text">
-          <textarea name="" id="" cols="100" rows="10">
-            <%= output.detail %>
-          </textarea>
+          <textarea name="" id="" cols="100" rows="10"><%= output.detail %></textarea>
         </div>
         <div class="read-more">
           <%= link_to "READ MORE", "#" %>

@@ -4,26 +4,35 @@
 <div class="form_wrapper">
   <h3>出品情報(確認用)</h3>
   <p class="not-edit">※このページでは編集はできません</p>
-  <%= form_with model: [@output, @item], local: true do |form| %>
-    <%= render 'shared/error_messages', model: form.object %>
-    <div class="form_flex">
-      <div class="form_item">
-        <%= form.label :item_name, "商品名" %>
-        <%= form.text_field :item_name, placeholder: "商品名", readonly: true %>
+    <div class="show_flex">
+      <div class="show_item">
+        <%= @item.item_name %>
+      </div>
+      <%# 購入者、出品者だけが商品詳細を見れるように条件分岐 %>
+      <div class="show_item">
+        <%= @item.item_detail %>
+      </div>
+      <%# 購入者、出品者だけが商品詳細を見れるように条件分岐 %>
+      <div class="show_item">
+        <%= @item.price %>円
+      </div>
+      <div class="show_item">
+      <%# <%= form.label :item_image, "参考画像" %>
+      <%# <div class="item_image"> %>
+        <%# <% if @item.item_image.present? %>
+          <%# <%= image_tag(@item.item_image) %>
+        <%# <% else %>
+          <%# 画像はありません %>
+        <%# <% end %>
       </div>
       <div class="form_item">
-        <%= form.label :item_detail, "商品内容" %>
-        <%= form.text_area :item_detail, placeholder: "商品内容", rows: "10", readonly: true %>
-      </div>
-      <div class="form_item">
-        <%= form.label :price, "出品金額" %>
-        <%= form.text_field :price, placeholder: "例）1200", readonly: true%>
-      </div>
-      <div class="form_item">
-         <%= link_to "出品情報を編集する", edit_output_item_path(params[:id]), class: "edit_profile_btn"%>
+      <% if current_user.id == @item.user_id %>
+         <%= link_to "出品情報を編集する", edit_output_item_path(@item.id), class: "edit_profile_btn"%>
+      <% else %>
+         <%# <%= link_to "商品を購入する",  output_item_orders_path(@item.id), class: "edit_profile_btn"%> %>
+      <% end %>
       </div>
     </div>
-  <% end %>
 </div>
 </main>
 

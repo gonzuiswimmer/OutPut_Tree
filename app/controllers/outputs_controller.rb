@@ -24,7 +24,7 @@ class OutputsController < ApplicationController
 
   def edit
     @output = Output.find(params[:id])
-    @item = Item.where(output_id: @output.id)
+    @item = Item.where(output_id: params[:id])
   end
 
   def update
@@ -36,6 +36,11 @@ class OutputsController < ApplicationController
     end 
   end
 
+  def show
+    @output = Output.find(params[:id])
+    @item = Item.where(output_id: @output.id)
+  end
+
   def destroy
     @output = Output.find(params[:id])
     @output.destroy
@@ -44,7 +49,7 @@ class OutputsController < ApplicationController
 
   private
   def output_params
-    params.require(:output).permit(:title, :detail, :post_date, :genre_id).merge(user_id: current_user.id)
+    params.require(:output).permit(:title, :detail, :post_date, :genre_id, :output_image).merge(user_id: current_user.id)
   end
 
 end

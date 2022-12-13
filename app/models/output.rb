@@ -9,4 +9,5 @@ class Output < ApplicationRecord
   has_one :item, dependent: :destroy
   belongs_to :genre
   belongs_to :user
+  has_one_attached :output_image
 end
